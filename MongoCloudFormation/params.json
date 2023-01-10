@@ -1,0 +1,26 @@
+[   
+    {
+        "ParameterKey" : "KeyName",
+        "ParameterValue" : "FluxTestEc2" 
+    },
+    {
+        "ParameterKey" : "MyInstanceType",
+        "ParameterValue" : "t2.medium" 
+    },
+    {
+        "ParameterKey" : "clientIp",
+        "ParameterValue" : "80.94.114.164/32" 
+    },
+    {
+        "ParameterKey" : "imageId",
+        "ParameterValue" : "ami-0fe0b2cf0e1f25c8a" 
+    },
+    {
+        "ParameterKey" : "subnetId",
+        "ParameterValue" : "subnet-08a8356eb822de6ad" 
+    },
+    {
+        "ParameterKey" : "vpcId",
+        "ParameterValue" : "vpc-0770121285d2088c8" 
+    }
+] 
