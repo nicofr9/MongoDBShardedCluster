@@ -1,0 +1,19 @@
+version: '2'
+services:
+  shard02-x:
+    image: mongo:5.0
+    container_name: shard-02-node-x
+    command: mongod --port 27017 --shardsvr --replSet rs-shard-02
+    volumes:
+      - ./scripts:/scripts
+    ports:
+      - 27125:27017
+    external_links:
+      - shard02-a
+      - shard02-b    
+    networks:
+      - mongodbshardedcluster_default
+
+networks:
+  mongodbshardedcluster_default:
+    external: true
