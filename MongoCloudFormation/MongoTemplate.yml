@@ -153,6 +153,9 @@ Resources:
             yum install docker -y
             systemctl enable docker.service
             systemctl start docker.service
+            groupadd docker
+            usermod -aG docker $USER
+            newgrp docker
             curl -L "https://github.com/docker/compose/releases/download/v2.12.2/docker-compose-$(uname -s)-$(uname -m)"  -o /usr/local/bin/docker-compose
             mv /usr/local/bin/docker-compose /usr/bin/docker-compose
             chmod +x /usr/bin/docker-compose
@@ -173,6 +176,7 @@ Resources:
             docker exec shard-02-node-a sh -c "mongo < /scripts/setFeatureCompatibilityVersion.js"
             docker exec router-01 sh -c "mongo </scripts/setFeatureCompatibilityVersion.js"
             docker exec router-02 sh -c "mongo </scripts/setFeatureCompatibilityVersion.js"
+
 
 
 
@@ -207,6 +211,9 @@ Resources:
             yum install docker -y
             systemctl enable docker.service
             systemctl start docker.service
+            groupadd docker
+            usermod -aG docker $USER
+            newgrp docker
             curl -L "https://github.com/docker/compose/releases/download/v2.12.2/docker-compose-$(uname -s)-$(uname -m)"  -o /usr/local/bin/docker-compose
             mv /usr/local/bin/docker-compose /usr/bin/docker-compose
             chmod +x /usr/bin/docker-compose
@@ -259,6 +266,9 @@ Resources:
             yum install docker -y
             systemctl enable docker.service
             systemctl start docker.service
+            groupadd docker
+            usermod -aG docker $USER
+            newgrp docker
             curl -L "https://github.com/docker/compose/releases/download/v2.12.2/docker-compose-$(uname -s)-$(uname -m)"  -o /usr/local/bin/docker-compose
             mv /usr/local/bin/docker-compose /usr/bin/docker-compose
             chmod +x /usr/bin/docker-compose
