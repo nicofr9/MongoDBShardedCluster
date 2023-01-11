@@ -275,8 +275,7 @@ Resources:
             yum install git -y
             git clone https://github.com/nicofr9/MongoDBShardedCluster.git
             cd MongoDBShardedCluster/
-            docker-compose up -d 
-            sleep 60
+            docker-compose up -d
             #configuration
             docker exec mongo-config-01 sh -c "mongo < /scripts/init-configserver.js"
             docker exec shard-01-node-a sh -c "mongo < /scripts/init-shard01.js"
@@ -285,12 +284,11 @@ Resources:
             docker exec -it shard-02-node-a bash -c "echo 'rs.addArb(\""shard02-x:27017\"")' | mongo --port 27017"
             docker exec router-01 sh -c "mongo < /scripts/setDefaultRW.js"
             docker exec router-01 sh -c "mongo < /scripts/init-router.js"
+            sleep 10
             docker exec shard-01-node-a sh -c "mongo < /scripts/setFeatureCompatibilityVersion.js"
             docker exec shard-02-node-a sh -c "mongo < /scripts/setFeatureCompatibilityVersion.js"
             docker exec router-01 sh -c "mongo </scripts/setFeatureCompatibilityVersion.js"
             docker exec router-02 sh -c "mongo </scripts/setFeatureCompatibilityVersion.js"
-
-
   
 
 Outputs:

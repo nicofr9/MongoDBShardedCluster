@@ -13,7 +13,7 @@ while getopts 'c:d:h' opt; do
       ;;
    
     ?|h)
-      echo "Usage: $(basename $0) [-n <the name of the stack>] [-c] (to create the stack) [-d] (to delete the stack)"
+      echo "Usage: $(basename $0)  [-c <stack name> ] (to create the stack) [-d <stack name>] (to delete the stack)"
       exit 1
       ;;
   esac
