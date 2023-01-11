@@ -1,0 +1,17 @@
+version: '2'
+services:
+  shard01-b:
+    image: mongo:5.0
+    container_name: shard-01-node-b
+    command: mongod --port 27017 --shardsvr --replSet rs-shard-01
+    volumes:
+      - ./scripts:/scripts
+    ports:
+      - 27124:27017
+    networks:
+      - mongodbshardedcluster_default
+
+networks:
+  mongodbshardedcluster_default:
+    external: true
+    

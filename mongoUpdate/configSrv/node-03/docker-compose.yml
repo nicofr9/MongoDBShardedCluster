@@ -1,0 +1,18 @@
+version: '2'
+services:
+  configsvr03:
+    image: mongo:5.0
+    container_name: mongo-config-03 
+    command: mongod --port 27017 --configsvr --replSet rs-config-server
+    volumes:
+      - ./scripts:/scripts
+    ports:
+      - 27121:27017
+    external_links:
+      - configsvr02
+    networks:
+      - mongodbshardedcluster_default
+
+networks:
+  mongodbshardedcluster_default:
+    external: true

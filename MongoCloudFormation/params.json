@@ -9,7 +9,7 @@
     },
     {
         "ParameterKey" : "clientIp",
-        "ParameterValue" : "37.160.198.102/32" 
+        "ParameterValue" : "37.160.144.137/32" 
     },
     {
         "ParameterKey" : "imageId",
