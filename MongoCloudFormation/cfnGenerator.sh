@@ -6,7 +6,6 @@ while getopts 'c:d:h' opt; do
       stackName=${OPTARG}
       aws cloudformation create-stack --stack-name $stackName --template-body file://MongoTemplate.yml --parameters file://params.json
       ;;
-
     d)
       stackName=${OPTARG}
       aws cloudformation delete-stack --stack-name $stackName
