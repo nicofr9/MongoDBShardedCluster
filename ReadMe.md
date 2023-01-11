@@ -8,5 +8,9 @@ To use it, simply launch the cloudformation stack on aws in any region,
          from console: add parameters manually, from cli : edit params.json with the correct values.
 This will go to create 3 instances and install the various components plus set the configuration 
 
-*Working in progress*: ->
-the next commits that i'm going to do are specifically to have a mongo cluster with 4.4.10-focal version for then skip to the 5.0 version 
+*working on* : next step is to move the various containers to different instances 
+
+
+*soon*: ->
+
+i'm going to to upgrade a mongo cluster with 4.4.10-focal version for skip to the 5.0 version 
