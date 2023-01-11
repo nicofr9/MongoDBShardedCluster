@@ -1,17 +1,16 @@
 #!/bin/bash
-
-while getopts 'cdn:h' opt; do
+create="create-stack"
+while getopts 'c:d:h' opt; do
   case "$opt" in
     c)
-      action="create-stack"
+      stackName=${OPTARG}
+      aws cloudformation create-stack --stack-name $stackName --template-body file://MongoTemplate.yml --parameters file://params.json
       ;;
 
     d)
-      action="delete-stack"
-      ;;
-
-    n)
       stackName=${OPTARG}
+      aws cloudformation delete-stack --stack-name $stackName
+
       ;;
    
     ?|h)
@@ -20,8 +19,4 @@ while getopts 'cdn:h' opt; do
       ;;
   esac
 done
-if [[ $action -eq "create-stack" ]] ; then
-     aws cloudformation $action --stack-name $stackName --template-body file://MongoTemplate.yml --parameters file://params.json
-else 
-     aws cloudformation $action --stack-name $stackName
-fi
+
